@@ -1,0 +1,15 @@
+<div class='loader'>
+  <img src='/ajax-loader.gif'/>
+</div>
+
+<script>
+  var user = window.location.pathname.substr(1, window.location.pathname.length);
+  $.ajax({
+    type: 'GET',
+    url: window.location.pathname + '/refresh'
+  }).done(function(data){
+    console.log(data);
+    $('.loader').hide(); 
+    $('.tweet-container').html(data);
+  });
+</script>

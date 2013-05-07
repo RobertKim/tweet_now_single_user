@@ -1,0 +1,21 @@
+
+<div class="container">
+  <h1><%= @twitter_user.name %> </h1>
+  <form id="send_tweet" method='post' action='/send_tweet'>
+    <input type="text" name="tweet_username" value="<%= @twitter_user.username %>">
+    <input type="text" name="tweet_text" placeholder="message">
+    <button type="submit">Tweet!</button>
+
+  </form>
+
+   <div class='twt_container'>
+    
+  </div>
+
+
+ <%= erb :_loading_tweet_now, layout => false %>
+
+  
+</div>
+
+

@@ -1,0 +1,14 @@
+Add helpers here as *.rb files, e.g.,
+
+app/helpers/formatting.rb
+
+helpers do
+  def em(text)
+    "<em>#{text}</em>"
+  end
+end
+
+
+  <% @user_followers.users.map do |user| %>
+    <p> <a href="https://twitter.com/<%= user.username %>" ><%= user.name %></a></p>
+  <% end %>

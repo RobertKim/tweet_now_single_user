@@ -1,0 +1,23 @@
+<script>
+$(document).ready(function() {
+ $('#send_tweet').on('submit', function(e){
+  e.preventDefault();
+  var loader = $("<img src='/ajax-loader.gif'/>")
+  $('.container').append(loader);
+  $.ajax ({
+      type: "POST",
+      url: "/send_tweet",
+      data: $(this).serialize()
+  }).done(function(data){
+    $(loader).hide(); 
+    $('.twt_container').html(data);
+  })
+ 
+
+ }); //#send_tweet
+
+
+  
+});
+
+</script>
